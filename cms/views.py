@@ -7,8 +7,8 @@ from cms.models import Pages
 def mostrar (request, identificador):
 	try:
 		pag = Pages.object.get(name= identificador)
-		respuesta= "La pagina es " + valor.page
-	except Pages.DoesNotExit:
+		respuesta= "La pagina es " + pag.page
+	except Pages.DoesNotExist:
 		respuesta = "Pagina no existente"
 	return HttpResponse (respuesta)
 	
